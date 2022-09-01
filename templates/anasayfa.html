@@ -453,7 +453,26 @@ tr_min_yt_tutari_3456 = 1500000;
           
           
               // prevent multiple submission
-            
+              $(".mainForm").submit(function () {
+                if ($(this).valid()) {
+                  
+          
+                  if($('.ilceSelect').hasClass('active') && $('.ilceSelect').val() == '0'){
+                    alert('İlçe seçiniz');
+                    return false
+                  }
+          
+          
+                  $(this).submit(function () {return false;});
+          
+                  
+          
+                  return true;
+                }
+                else {
+                  return false;
+                }
+              });
           
           })
           
